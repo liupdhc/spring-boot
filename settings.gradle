@@ -1,10 +1,18 @@
 pluginManagement {
 	repositories {
+		maven {
+			allowInsecureProtocol true
+			url = "https://nas.liupdhc.com:8086/repository/maven-central/"
+			credentials {
+				it.username = "liupdhc"
+				it.password = "liu-7746"
+			}
+		}
 		mavenCentral()
 		gradlePluginPortal()
-		if (version.endsWith('-SNAPSHOT')) {
-			maven { url "https://repo.spring.io/snapshot" }
-		}
+//		if (version.endsWith('-SNAPSHOT')) {
+//			maven { url "https://repo.spring.io/snapshot" }
+//		}
 	}
 	resolutionStrategy {
 		eachPlugin {

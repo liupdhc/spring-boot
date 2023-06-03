@@ -28,13 +28,21 @@ allprojects {
 	group "org.springframework.boot"
 
 	repositories {
+		maven {
+			allowInsecureProtocol true
+			url = "https://nas.liupdhc.com:8086/repository/maven-releases/"
+			credentials {
+				it.username = "liupdhc"
+				it.password = "liu-7746"
+			}
+		}
 		mavenCentral()
-		if (version.contains('-')) {
-			maven { url "https://repo.spring.io/milestone" }
-		}
-		if (version.endsWith('-SNAPSHOT')) {
-			maven { url "https://repo.spring.io/snapshot" }
-		}
+//		if (version.contains('-')) {
+//			maven { url "https://repo.spring.io/milestone" }
+//		}
+//		if (version.endsWith('-SNAPSHOT')) {
+//			maven { url "https://repo.spring.io/snapshot" }
+//		}
 	}
 
 	configurations.all {
